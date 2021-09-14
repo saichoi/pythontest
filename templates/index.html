@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 90%;
+            margin:0 auto;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table, th, td{
+            border : 1px solid #000;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr td:last-child{
+            text-align: left;
+            padding: 10px;
+        }
+
+        .img{
+            width: 5%;
+        }
+        .title{
+            width: 30%;
+        }
+        .rating{
+            width: 5%;
+        }
+        .summery{
+            width: 60%;
+            height: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+      <h1>현재 온도 : {{weather.temp}}°C</h1>
+         <table>
+            <tr>
+                <th class="img">사진</th>
+                <th class="title">영화제목</th>
+                <th class="rating">평점</th>
+                <th class="summery">줄거리</th>
+            </tr>
+
+            {% for movie in movies%}
+            <tr>
+                <td><img src="{{movie.small_cover_image}}"></td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.rating}}</td>
+                <td>{{movie.runtime}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
