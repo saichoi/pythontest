@@ -2,8 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 
 def callWeather():
-    
-    templist= []
 
     uri = '''
     https://search.naver.com/search.naver?where=nexearch&sm=top_sly.hst&fbm=0&acr=1&acq=%EB%82%A0%EC%94%A8&qdt=0&ie=utf8&query=%EB%82%A0%EC%94%A8
